@@ -1,5 +1,6 @@
 /*This program computes the absolute difference of diagonals for a square,
 non-negative, two dimensional vector (matrix). Matrix values are randomly generated.
+Original prompt from hackerrank (https://www.hackerrank.com/challenges/diagonal-difference)
 Author: Dan Vyenielo
 Date: 9/1/2017*/
 
@@ -15,8 +16,8 @@ bool is_dimension_valid(const int dimension);
 void prompt_user(int &dimension);
 void gen_rand_NxN_matrix(vector<vector<int> > &matrix, const int dimension);
 void print_NxN_matrix(const vector<vector<int> > &matrix);
-int sum_left_diag_NxN_matrix(vector<vector<int> > &matrix);
-int sum_right_diag_NxN_matrix(vector<vector<int> > &matrix);
+int sum_left_diag_NxN_matrix(const vector<vector<int> > &matrix);
+int sum_right_diag_NxN_matrix(const vector<vector<int> > &matrix);
 
 int main() {
 	int dimension = -1;
@@ -74,7 +75,7 @@ void print_NxN_matrix(const vector<vector<int> > &matrix) {
 	}
 }
 
-int sum_left_diag_NxN_matrix(vector<vector<int> > &matrix) {
+int sum_left_diag_NxN_matrix(const vector<vector<int> > &matrix) {
 	int N = matrix.size();
 	int sum = 0;
 	for (int i = 0; i < N; i++) {
@@ -83,7 +84,7 @@ int sum_left_diag_NxN_matrix(vector<vector<int> > &matrix) {
 	return sum;
 }
 
-int sum_right_diag_NxN_matrix(vector<vector<int> > &matrix) {
+int sum_right_diag_NxN_matrix(const vector<vector<int> > &matrix) {
 	int N = matrix.size();
 	int sum = 0;
 	for (int i = (N - 1); i >= 0; i--) {
