@@ -1,12 +1,12 @@
 /*
-This program iterates on the range a-z while printing
+This program iterates on the range a-z and A-Z while printing
 the corresponding ASCII value for the current value 
 of the control variable. type{value} narrowing preventing
 syntax is utilized for conversion between int and char data
 types. Implicit conversion of control is utilized by the 
-post-increment statement at the end of the while loop.
+post-increment statement at the end of the loops.
 Original inspiration for this program for Bjarne Stroustrup's
-book Programming Principles and Practice (PPP) pg. 111.
+book Programming Principles and Practice (PPP) pg. 111 and 113.
 Author: Dan Vyenielo
 Date: 9/4/2017
 */
