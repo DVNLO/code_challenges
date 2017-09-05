@@ -17,11 +17,22 @@ using namespace std;
 
 int main()
 {
-	char control = 'a';
-	while (int{ control } <= int{ 'z' })
+	
+	cout << "Print the ASCII char and value from a-z and A-Z, respectively, using a while loop." << endl;
+	char while_control = 'a';
+	while (int{ while_control } <= int{ 'z' })
 	{
-		cout << control << ' ' << int{ control } << endl;
-		control++;
+		//print lowercase then uppercase
+		cout << while_control << ' ' << int{ while_control } << ' '
+			<< char( toupper(while_control) ) << ' ' << int{ toupper(while_control) } << endl;	//in-range conversion to char.
+		while_control++;
+	}
+	cout << "Print the ASCII char and value from a-z and A-Z, respectively, using a for loop." << endl;
+	for (char for_control = 'a'; for_control <= 'z'; for_control++)
+	{
+		//print lowercase then uppercase
+		cout << for_control << ' ' << int{ for_control } << ' '
+			<< char( toupper(for_control) ) << ' ' << int{ toupper(for_control) } << endl;	//in-range conversion to char.
 	}
     return 0;
 }
