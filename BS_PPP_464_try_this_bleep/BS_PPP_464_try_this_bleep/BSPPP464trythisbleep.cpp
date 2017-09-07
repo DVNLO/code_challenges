@@ -18,7 +18,7 @@ bool is_word_censured(const vector<string> &censure, const string word);
 int main()
 {
 	vector<string> words;
-	vector<string> censure = { "phuck","shat" };
+	const vector<string> censure = { "phuck","shat" };
 	cout << "Type a sentence. When complete, press CTRL+Z." << endl;
 	for (string word; cin >> word; )	//no need to increment - interesting.
 		words.push_back(word);
