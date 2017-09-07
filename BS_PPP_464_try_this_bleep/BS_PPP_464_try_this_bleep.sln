@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BS_PPP_464_try_this_bleep", "BS_PPP_464_try_this_bleep\BS_PPP_464_try_this_bleep.vcxproj", "{EF9A0866-C1ED-45BF-83C0-C72B374BAA3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF9A0866-C1ED-45BF-83C0-C72B374BAA3F}.Debug|x64.ActiveCfg = Debug|x64
+		{EF9A0866-C1ED-45BF-83C0-C72B374BAA3F}.Debug|x64.Build.0 = Debug|x64
+		{EF9A0866-C1ED-45BF-83C0-C72B374BAA3F}.Debug|x86.ActiveCfg = Debug|Win32
+		{EF9A0866-C1ED-45BF-83C0-C72B374BAA3F}.Debug|x86.Build.0 = Debug|Win32
+		{EF9A0866-C1ED-45BF-83C0-C72B374BAA3F}.Release|x64.ActiveCfg = Release|x64
+		{EF9A0866-C1ED-45BF-83C0-C72B374BAA3F}.Release|x64.Build.0 = Release|x64
+		{EF9A0866-C1ED-45BF-83C0-C72B374BAA3F}.Release|x86.ActiveCfg = Release|Win32
+		{EF9A0866-C1ED-45BF-83C0-C72B374BAA3F}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CAD6DA1B-8DD9-4B45-9A40-7B850936E312}
+	EndGlobalSection
+EndGlobal
