@@ -14,16 +14,11 @@ public:
 		steps = in;
 	}
 	void print() {
-		for (unsigned int i = 0; i < steps; i++)
-		{
+		for (unsigned int i = 0; i < steps; i++) {
 			for (unsigned int j = 0; j < steps - i; j++)
-			{
 				cout << ' ';
-			}
 			for (unsigned int k = steps; k >= steps - i; k--)
-			{
 				cout << '#';
-			}
 			cout << endl;
 		}
 	}
