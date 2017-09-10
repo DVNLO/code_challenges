@@ -1,6 +1,8 @@
 /*This program prompts the user for input to initialize 
 an object of a Staircase class. The object is printed to
 the screen.
+Original prompt from hackerrank.com:
+https://www.hackerrank.com/challenges/staircase
 Author: Dan Vyenielo
 Date: 9/10/2017*/
 
