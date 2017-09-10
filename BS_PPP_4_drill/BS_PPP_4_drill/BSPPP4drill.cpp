@@ -1,4 +1,4 @@
-/*The following progarm is a drill excercise from Bjarne Stroustrup's
+/*The following progarm is a drill from Bjarne Stroustrup's
 Programming Principles and Practice. The drill is taken from chapter 4. 
 Author: Dan Vyenielo
 Date: 9 September 2017*/
