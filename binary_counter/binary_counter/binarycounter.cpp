@@ -2,6 +2,8 @@
 * This program niavely converts unsigned decimal integer values to binary.
 * There are more efficient programs, and algorithms which can be found
 * here: https://stackoverflow.com/questions/22746429/c-decimal-to-binary-converting
+* To show the conversion in action, the main loop calls the conversion for
+* all unsigned integer values. 
 * Author: Dan Vyenielo
 * Date: 9/21/17
 */
