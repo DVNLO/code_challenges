@@ -17,8 +17,8 @@ void unsigned_int_to_binary(const unsigned int &in, std::vector<int> &binary);
 
 int main()
 {
-	int int_value = 1;
-	while (int_value)
+	unsigned int int_value = 1;
+	while (int_value)	//count to ~4 trillion... Convert for each step. 
 	{
 		std::vector<int> binary;
 		unsigned_int_to_binary(int_value, binary);
