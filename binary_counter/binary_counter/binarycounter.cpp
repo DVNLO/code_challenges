@@ -17,11 +17,15 @@ void unsigned_int_to_binary(const unsigned int &in, std::vector<int> &binary);
 
 int main()
 {
-	std::vector<int> binary;
-	int int_value = 0;
-	std::cin >> int_value;
-	unsigned_int_to_binary(int_value, binary);	//is this a shallow or deep copy?
-	print_vector(binary);
+	int int_value = 1;
+	while (int_value)
+	{
+		std::vector<int> binary;
+		unsigned_int_to_binary(int_value, binary);
+		std::cout << int_value << " ";
+		print_vector(binary);
+		int_value++;
+	}
 	return 0;
 }
 
@@ -49,9 +53,10 @@ void unsigned_int_to_binary(const unsigned int &in, std::vector<int> &binary) {
 		//std::cout << "quotient::" << quotient << std::endl;
 		remainder -= quotient;
 		//std::cout << "remainder::" << remainder << std::endl;
-		if (binary.size() <= exp)
-			binary.resize(exp, 0);
-		binary[binary.size() - exp] = 1;	//coef of most significant power
+		if (binary.size() <= exp) {
+			binary.resize(exp + 1, 0);
+		}	
+		binary[binary.size() - exp - 1] = 1;	//coef of most significant power (listed most to least significant)
 	}
 }
 
