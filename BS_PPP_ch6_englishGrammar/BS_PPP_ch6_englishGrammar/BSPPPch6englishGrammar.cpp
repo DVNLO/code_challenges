@@ -44,7 +44,7 @@ bool sentence() {
 	if (is(noun, noun_list) && is(verb, verb_list)) {
 		cin >> next;
 		if (is(next, conjunction_list))
-			sentence();
+			return sentence();
 		else
 			return true;
 	}	
