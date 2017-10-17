@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BS_PPP_CH6_permutation", "BS_PPP_CH6_permutation\BS_PPP_CH6_permutation.vcxproj", "{CF7CD5A8-ACE7-4005-9CAF-A70017386EEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF7CD5A8-ACE7-4005-9CAF-A70017386EEB}.Debug|x64.ActiveCfg = Debug|x64
+		{CF7CD5A8-ACE7-4005-9CAF-A70017386EEB}.Debug|x64.Build.0 = Debug|x64
+		{CF7CD5A8-ACE7-4005-9CAF-A70017386EEB}.Debug|x86.ActiveCfg = Debug|Win32
+		{CF7CD5A8-ACE7-4005-9CAF-A70017386EEB}.Debug|x86.Build.0 = Debug|Win32
+		{CF7CD5A8-ACE7-4005-9CAF-A70017386EEB}.Release|x64.ActiveCfg = Release|x64
+		{CF7CD5A8-ACE7-4005-9CAF-A70017386EEB}.Release|x64.Build.0 = Release|x64
+		{CF7CD5A8-ACE7-4005-9CAF-A70017386EEB}.Release|x86.ActiveCfg = Release|Win32
+		{CF7CD5A8-ACE7-4005-9CAF-A70017386EEB}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A29C7F6A-F3F1-408C-8665-0D90219D1548}
+	EndGlobalSection
+EndGlobal
