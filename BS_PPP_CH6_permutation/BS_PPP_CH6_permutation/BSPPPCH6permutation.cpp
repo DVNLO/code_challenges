@@ -1,12 +1,12 @@
 /*
-The following programm as written in response to a prompt provided
+The following programm was written in response to a prompt provided
 by the book Progrmaming Principles and Practice by Bjarne Stroustrup.
-This program was written in response to prompt 10 in chapter 6. The 
-program computes the number of permutations or combinations of a and b.
-As it is written, there are areas to improve: error checking is fairly
-relaxed, and given the high likelihood of a factorial to grow, very 
+This program answers prompt 10 in chapter 6. It computes the number 
+of permutations or combinations of a and b. 
+There are areas to improve: error checking is fairly relaxed, and 
+given the high likelihood of a factorial to grow, very 
 fast, overflow of the data type is a real concern. Moreover, there is
-an opportunity to optimize, and simplify the simplify*() function (the irony). 
+an opportunity to optimize, and simplify the simplify*() function. 
 However, as written, the program produces correct results for 
 limited test cases. 
 Author: Dan Vyenielo
@@ -66,8 +66,8 @@ void prompt_user(unsigned int& a, unsigned int& b, char& computation_method) {
 	}
 	else
 		throw exception("Invalid entry; options are 'p' or 'c'.");
-	if (a - b < 0)
-		throw exception("Invalid entry; a must be larger than b.");
+	if (a - b < 0 || a < 0 || b < 0)
+		throw exception("Invalid entry; a must be positive and larger than b.");
 }
 
 unsigned int compute(const unsigned int& a, const unsigned int& b, const char& computation_method) {
