@@ -26,7 +26,7 @@ int main()
 		vector<char> input;
 		char c;
 		cin >> c;
-		while (isdigit(c)) {
+		while (isdigit(c)) {	//forbids non-integer input
 			input.push_back(c);
 			cin >> c;
 		}
