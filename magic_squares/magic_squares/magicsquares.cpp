@@ -24,10 +24,7 @@ using namespace std;
 //
 bool check_if_magic(const std::string& square)
 {
-	if (square[4] != '5')
-		return false;
-	
-	cout << "Begin check " << square << endl;
+	/*cout << "Begin check " << square << endl;
 	cout << "Center is 5" << endl;
 	cout << "Sum row 1: " << (uint_fast64_t(square[0]) + uint_fast64_t(square[1]) + uint_fast64_t(square[2])) << endl;
 	cout << "Sum row 2: " << (uint_fast64_t(square[3]) + uint_fast64_t(square[4]) + uint_fast64_t(square[5])) << endl;
@@ -37,70 +34,26 @@ bool check_if_magic(const std::string& square)
 	cout << "Sum column 3: " << (uint_fast64_t(square[2]) + uint_fast64_t(square[5]) + uint_fast64_t(square[8])) << endl;
 	cout << "Sum diagonal forward: " << (uint_fast64_t(square[0]) + uint_fast64_t(square[4]) + uint_fast64_t(square[8])) << endl;
 	cout << "Sum diagonal backward: " << (uint_fast64_t(square[2]) + uint_fast64_t(square[4]) + uint_fast64_t(square[6])) << endl;
+*/
 
-	if (
-		(int(square[0]) + int(square[1]) + int(square[2])) ==
-		(int(square[3]) + int(square[4]) + int(square[5])) ==
-		(int(square[6]) + int(square[7]) + int(square[8]))
-		)
-		cout << "Sum of rows are equal" << endl;
-	cout << (int(square[0]) + int(square[1]) + int(square[2])) << ' ' << (int(square[3]) + int(square[4]) + int(square[5])) << ' ' << (int(square[6]) + int(square[7]) + int(square[8])) << endl;
-	if (
-		(int(square[0]) + int(square[1]) + int(square[2])) ==
-		(int(square[3]) + int(square[4]) + int(square[5]))
-		)
-		cout << "Two rows are equal" << endl;
-	if (
-		(uint_fast64_t(square[0]) + uint_fast64_t(square[3]) + uint_fast64_t(square[6])) ==
-		(uint_fast64_t(square[1]) + uint_fast64_t(square[4]) + uint_fast64_t(square[7])) ==
-		(uint_fast64_t(square[2]) + uint_fast64_t(square[5]) + uint_fast64_t(square[8]))
-		)
-		cout << "Sum of columns are equal" << endl;
-
-	if (
-		(uint_fast64_t(square[0]) + uint_fast64_t(square[4]) + uint_fast64_t(square[8])) ==
-		(uint_fast64_t(square[2]) + uint_fast64_t(square[4]) + uint_fast64_t(square[6]))
-		)
-		cout << "Sum of diagonals are equal" << endl;
-	
-	if (
-		//sum of rows
-		(
-		(uint_fast64_t(square[0]) + uint_fast64_t(square[1]) + uint_fast64_t(square[2])) ==
-			(uint_fast64_t(square[3]) + uint_fast64_t(square[4]) + uint_fast64_t(square[5])) ==
-			(uint_fast64_t(square[6]) + uint_fast64_t(square[7]) + uint_fast64_t(square[8]))
-			) &&
-		//sum of columns
-			(
-		(uint_fast64_t(square[0]) + uint_fast64_t(square[3]) + uint_fast64_t(square[6])) ==
-				(uint_fast64_t(square[1]) + uint_fast64_t(square[4]) + uint_fast64_t(square[7])) ==
-				(uint_fast64_t(square[2]) + uint_fast64_t(square[5]) + uint_fast64_t(square[8]))
-				) &&
-		//diagonals
-				(
-		(uint_fast64_t(square[0]) + uint_fast64_t(square[4]) + uint_fast64_t(square[8])) ==
-					(uint_fast64_t(square[2]) + uint_fast64_t(square[4]) + uint_fast64_t(square[6]))
-					)
-)
-		cout << "magic square" << endl;
+	auto magic_sum = (uint_fast64_t(square[0]) + uint_fast64_t(square[1]) + uint_fast64_t(square[2]));
 
 	return (
 		//sum of rows
 		(
-			(uint_fast64_t(square[0]) + uint_fast64_t(square[1]) + uint_fast64_t(square[2])) ==
-			(uint_fast64_t(square[3]) + uint_fast64_t(square[4]) + uint_fast64_t(square[5])) ==
-			(uint_fast64_t(square[6]) + uint_fast64_t(square[7]) + uint_fast64_t(square[8]))
+			((uint_fast64_t(square[3]) + uint_fast64_t(square[4]) + uint_fast64_t(square[5])) == magic_sum) &&
+			((uint_fast64_t(square[6]) + uint_fast64_t(square[7]) + uint_fast64_t(square[8])) == magic_sum)
 		) &&
 		//sum of columns
 		(
-			(uint_fast64_t(square[0]) + uint_fast64_t(square[3]) + uint_fast64_t(square[6])) ==
-			(uint_fast64_t(square[1]) + uint_fast64_t(square[4]) + uint_fast64_t(square[7])) ==
-			(uint_fast64_t(square[2]) + uint_fast64_t(square[5]) + uint_fast64_t(square[8]))
+			((uint_fast64_t(square[0]) + uint_fast64_t(square[3]) + uint_fast64_t(square[6])) == magic_sum) &&
+			((uint_fast64_t(square[1]) + uint_fast64_t(square[4]) + uint_fast64_t(square[7])) == magic_sum) &&
+			((uint_fast64_t(square[2]) + uint_fast64_t(square[5]) + uint_fast64_t(square[8])) == magic_sum)
 		) &&
 		//diagonals
 		(
-			(uint_fast64_t(square[0]) + uint_fast64_t(square[4]) + uint_fast64_t(square[8])) ==
-			(uint_fast64_t(square[2]) + uint_fast64_t(square[4]) + uint_fast64_t(square[6]))
+			((uint_fast64_t(square[0]) + uint_fast64_t(square[4]) + uint_fast64_t(square[8])) == magic_sum) &&
+			((uint_fast64_t(square[2]) + uint_fast64_t(square[4]) + uint_fast64_t(square[6])) == magic_sum)
 		)
 	);
 }
@@ -113,7 +66,7 @@ static string magic_string = "816357492";
 void generate_or_check(int index_or_check = 8)
 {
 	if (index_or_check == -1) {
-		if (check_if_magic(magic_string))
+		if (check_if_magic(buffer))
 			cout << buffer << " ";
 		return;
 	}
