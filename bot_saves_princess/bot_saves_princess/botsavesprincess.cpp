@@ -91,7 +91,6 @@ void displayPathtoPrincess(int n, vector <string> grid) {
 	cord_princess = find_cord(n, princess, grid);
 	cord_hero = find_cord(n, hero, grid);
 	difference = difference_between(cord_hero, cord_princess);
-	cout << "DUDE\n";
 	vector<int> moves = generate_move_sequence(difference);
 	print_move_sequence(moves);
 }
