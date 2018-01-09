@@ -35,6 +35,20 @@ bool check_if_magic(const std::string& square)
 	cout << "Sum diagonal forward: " << (uint_fast64_t(square[0]) + uint_fast64_t(square[4]) + uint_fast64_t(square[8])) << endl;
 	cout << "Sum diagonal backward: " << (uint_fast64_t(square[2]) + uint_fast64_t(square[4]) + uint_fast64_t(square[6])) << endl;
 */
+	short int i = 0, k = 0;
+	while (i < 9)
+	{
+		k += i;
+		while (k < 9)
+		{
+			if (square[i] == square[k])
+			{
+				return false;
+			}
+			k++;
+		}
+		i++;
+	}
 
 	auto magic_sum = (uint_fast64_t(square[0]) + uint_fast64_t(square[1]) + uint_fast64_t(square[2]));
 
