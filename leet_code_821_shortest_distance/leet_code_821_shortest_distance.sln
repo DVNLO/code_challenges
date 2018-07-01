@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leet_code_821_shortest_distance", "leet_code_821_shortest_distance\leet_code_821_shortest_distance.vcxproj", "{38FC283C-BBEA-4657-BF11-1E7E9AB9B663}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38FC283C-BBEA-4657-BF11-1E7E9AB9B663}.Debug|x64.ActiveCfg = Debug|x64
+		{38FC283C-BBEA-4657-BF11-1E7E9AB9B663}.Debug|x64.Build.0 = Debug|x64
+		{38FC283C-BBEA-4657-BF11-1E7E9AB9B663}.Debug|x86.ActiveCfg = Debug|Win32
+		{38FC283C-BBEA-4657-BF11-1E7E9AB9B663}.Debug|x86.Build.0 = Debug|Win32
+		{38FC283C-BBEA-4657-BF11-1E7E9AB9B663}.Release|x64.ActiveCfg = Release|x64
+		{38FC283C-BBEA-4657-BF11-1E7E9AB9B663}.Release|x64.Build.0 = Release|x64
+		{38FC283C-BBEA-4657-BF11-1E7E9AB9B663}.Release|x86.ActiveCfg = Release|Win32
+		{38FC283C-BBEA-4657-BF11-1E7E9AB9B663}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BFF83E09-0EC7-4EFB-B633-D548E3DC6F07}
+	EndGlobalSection
+EndGlobal
