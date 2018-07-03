@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leet_code_806_number_lines_write_string", "leet_code_806_number_lines_write_string\leet_code_806_number_lines_write_string.vcxproj", "{B1399BFA-9BAB-4384-9020-61641F62F9AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1399BFA-9BAB-4384-9020-61641F62F9AD}.Debug|x64.ActiveCfg = Debug|x64
+		{B1399BFA-9BAB-4384-9020-61641F62F9AD}.Debug|x64.Build.0 = Debug|x64
+		{B1399BFA-9BAB-4384-9020-61641F62F9AD}.Debug|x86.ActiveCfg = Debug|Win32
+		{B1399BFA-9BAB-4384-9020-61641F62F9AD}.Debug|x86.Build.0 = Debug|Win32
+		{B1399BFA-9BAB-4384-9020-61641F62F9AD}.Release|x64.ActiveCfg = Release|x64
+		{B1399BFA-9BAB-4384-9020-61641F62F9AD}.Release|x64.Build.0 = Release|x64
+		{B1399BFA-9BAB-4384-9020-61641F62F9AD}.Release|x86.ActiveCfg = Release|Win32
+		{B1399BFA-9BAB-4384-9020-61641F62F9AD}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C74E995A-8B33-4B9C-BF84-A925B0D49BCE}
+	EndGlobalSection
+EndGlobal
