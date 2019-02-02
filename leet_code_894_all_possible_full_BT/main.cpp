@@ -32,14 +32,34 @@ TreeNode* copy(TreeNode const * const source)
 	return root;
 }
 
+void buildFBTS(vector<TreeNode*> & trees, TreeNode*& cur_tree_root, TreeNode*& cur_node,
+		unsigned cur_size, unsigned const target_size)
+{
+	if(!cur_node->left && !cur_node->right)
+	{
+		cur_node->left = new TreeNode(0);
+		cur_node->right = new TreeNode(0);
+		cur_size += 2;
+	}
+	if(cur_size == target_size)
+	{
+		trees.push_back(copy(cur_tree_root));
+		return;
+	}
+	if(cur_node->left)
+		buildFBTS(trees, copy(cur_tree_root), cur_node->left, cur_size, target_size);
+	if(cur_node->right)
+		buildFBTS(trees, copy(cur_tree_root), cur_node->right, cur_size, target_size);
+}
+
+
 vector<TreeNode*> allPossibleFBT(int N)
 {
 	vector<TreeNode*> trees;
-	if(N <= 0 || !(N % 2))
+	if(!(N % 2))
 		return trees;
-	TreeNode* tree = new TreeNode(0);
-	appendChildren(tree);
-	//buildCompleteTrees(trees, N);
+	TreeNode* root = new TreeNode(0);
+	buildFBTS(trees, root, 1, N);
 	return trees;
 }
 
