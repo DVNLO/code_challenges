@@ -44,5 +44,5 @@ public:
 			res[i] = even_sum;    // store the current even_sum in res
 		}
 		return res;
-	}
+	}	// execution time roughly 120ms.
 };
