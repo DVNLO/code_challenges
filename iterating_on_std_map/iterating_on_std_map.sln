@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "iterating_on_std_map", "iterating_on_std_map\iterating_on_std_map.vcxproj", "{249121E2-7F3D-45A8-8E65-6012D94A5553}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{249121E2-7F3D-45A8-8E65-6012D94A5553}.Debug|x64.ActiveCfg = Debug|x64
+		{249121E2-7F3D-45A8-8E65-6012D94A5553}.Debug|x64.Build.0 = Debug|x64
+		{249121E2-7F3D-45A8-8E65-6012D94A5553}.Debug|x86.ActiveCfg = Debug|Win32
+		{249121E2-7F3D-45A8-8E65-6012D94A5553}.Debug|x86.Build.0 = Debug|Win32
+		{249121E2-7F3D-45A8-8E65-6012D94A5553}.Release|x64.ActiveCfg = Release|x64
+		{249121E2-7F3D-45A8-8E65-6012D94A5553}.Release|x64.Build.0 = Release|x64
+		{249121E2-7F3D-45A8-8E65-6012D94A5553}.Release|x86.ActiveCfg = Release|Win32
+		{249121E2-7F3D-45A8-8E65-6012D94A5553}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90272E72-209C-417C-99F8-2AF29D84C56C}
+	EndGlobalSection
+EndGlobal
