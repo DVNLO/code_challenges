@@ -6,12 +6,14 @@
 #include <vector>
 
 
-void generate_permutations(std::vector<std::string> & permutations, std::unordered_set<char> & S, std::string permutation = default)
+void generate_permutations(std::vector<std::string> & permutations, 
+                            std::unordered_set<char> & S, 
+                            std::string permutation = std::string())
 {
-	if(S.empty())
-	{
-		permutations.push_back(permutation);
-		return;
+    if(S.empty())
+    {
+        permutations.push_back(permutation);
+        return;
 	}
 	else
 	{
@@ -19,14 +21,14 @@ void generate_permutations(std::vector<std::string> & permutations, std::unorder
 		{
 			std::unordered_set<char> S_prime{ S };
 			S_prime.erase(s);
-			permutation += s;
-			generate_permutations(permutations, S_prime, permutation);
+			std::string permutation_prime{ permutation + s };
+			generate_permutations(permutations, S_prime, permutation_prime);
 		}
 	}
 }
 
 
-std:vector<std::string> generate_all_permutations(std::unordered_set<char> const & S)
+std::vector<std::string> generate_all_permutations(std::unordered_set<char> S)
 {
 	std::vector<std::string> permutations;
 	generate_permutations(permutations, S);
@@ -35,7 +37,12 @@ std:vector<std::string> generate_all_permutations(std::unordered_set<char> const
 
 int main()
 {
-	std::unordered_set<char> S { '1', '2', '3' };
+	std::unordered_set<char> S;
+    int end = static_cast<char>('j');
+    for(int i = static_cast<int>('a'); i <= end; ++i)
+    {
+        S.insert(static_cast<char>(i));
+    }
 	std::vector<std::string> permutations = generate_all_permutations(S);
 	for(auto const permutation : permutations)
 	{
