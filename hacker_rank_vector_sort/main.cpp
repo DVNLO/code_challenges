@@ -29,7 +29,7 @@ void merge(std::vector<int> const & left_source,
     std::size_t right_idx{ 0 }; 
     for(std::size_t i = 0; i < TARGET_SIZE;)
     {
-        if(left_idx == LEFT_SIZE)
+        if(left_idx == LEFT_SIZE) // copy remainder from the right
         {
             while(right_idx < RIGHT_SIZE)
             {
@@ -38,7 +38,7 @@ void merge(std::vector<int> const & left_source,
                 ++i;
             }
         }
-        else if(right_idx == RIGHT_SIZE)
+        else if(right_idx == RIGHT_SIZE)    // copy remainder from the left
         {
             while(left_idx < LEFT_SIZE)
             {
@@ -47,7 +47,7 @@ void merge(std::vector<int> const & left_source,
                 ++i;
             }
         }
-        else
+        else    // copy the i-th max from the left xor right
         {
             if(left_source[left_idx] <= right_source[right_idx])
             {
@@ -80,6 +80,21 @@ void copy(std::vector<int> const & source,
     }
 }
 
+
+/* Using indexes for this problem proved to be more challenging than I imagined.
+ * Nevertheless, as always followig DJIKSTRA's recommendation of always using 
+ * an integer which points to the index one past the end of the array is 
+ * exceptionally helpful in avoiding the "off by one errror".
+ * In addition to the indexing issue index translation from this frame to the 
+ * calling frame was initially a challenging bug to catch. When I started my 
+ * indexes were not being called relative to the current frame, but were kept
+ * absolute to the original calling frame. This caused the indexes to become 
+ * misaligned, which broke execution due to a segmentation fault. Overall, I
+ * think this was an excellent challenge in terms of thought, but If I could
+ * do it over I would not use indexes, and would now prefere to use the standard
+ * libraries iterators and copy function rather than re-implementing the functions
+ * myself.
+ */
 void merge_sort(std::vector<int> & values, 
                 std::size_t const left_idx, 
                 std::size_t const right_idx)
