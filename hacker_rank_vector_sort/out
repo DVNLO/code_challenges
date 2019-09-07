@@ -1,0 +1,27 @@
+0 5
+print source == { 1 4 }
+0 2
+print source == { 1 }
+0 1
+return
+print source == { 4 }
+0 1
+return
+i == 0 : 1 4
+print source == { 3 2 1 }
+0 3
+print source == { 3 }
+0 1
+return
+print source == { 2 1 }
+0 2
+print source == { 2 }
+0 1
+return
+print source == { 1 }
+0 1
+return
+i == 0 : 2 1
+i == 0 : 3 1
+i == 0 : 1 1
+print source == { 1 1 2 3 4 }
