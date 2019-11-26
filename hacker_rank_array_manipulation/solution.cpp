@@ -26,6 +26,44 @@ long arrayManipulation(int n, vector<vector<int>> queries)
     return max;
 }
 
+// unfortunately, sorting our queries does not optimize the solution. In fact, 
+// sorting will have O(nlog(n)) overhead just to perform the sorting. Therefore,
+// we need an alternative algorithm. I read in the discussion section, rather
+// than storing the absolute values, we could store the magnitudes with an 
+// encoding scheme where for a query q composed of a b c we set the original 
+// val[a] = val[a] + k and set val[b] = val[b] - k using this type of encoding 
+// we can form a superposition of the values between all the pairs of points in 
+// the queries, thus it's like we're storing the slopes at any single point
+// and we can determine the absolute value at a single point by accumulating
+// all the changes from left to right. The maximum value we obtain is then
+// the maximum value our accumulation achieves. That's a fundamentally intriguing
+// solution. SLOPE ENCODING! STORE THE CHANGE AT a and b within the interval. We are
+// changed by a and when we leave the interval we are changed by slope b.
+// Complete the arrayManipulation function below.
+long arrayManipulation(int n, vector<vector<int>> queries) 
+{
+    static size_t const A_IDX{ 0 };
+    static size_t const B_IDX{ 1 };
+    static size_t const K_IDX{ 2 };
+    vector<long long> vals(n, 0);
+    for(auto const query : queries)
+    {
+        vals[query[A_IDX] - 1] += query[K_IDX];	// step UP!
+        if(query[B_IDX] < n)
+        {
+            vals[query[B_IDX]] -= query[K_IDX];    // step DOWN!
+        }
+    }
+    long long max{ numeric_limits<long long>::min() };
+    long long accumulator{ 0 };
+    for(auto const val : vals)
+    {
+        accumulator += val;
+        max = std::max(max, accumulator);
+    }
+    return max;
+}
+
 int main()
 {
     ofstream fout(getenv("OUTPUT_PATH"));
