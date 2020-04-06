@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+// does not handle the case of duplicate values in the vector :(
+// https://algs4.cs.princeton.edu/23quicksort/
+// has a correct algorithm and explains my issue. I will look at this another time, though.
 vector<int>::iterator partition(vector<int> & vals,
 				vector<int>::iterator left,
 				vector<int>::iterator right)
