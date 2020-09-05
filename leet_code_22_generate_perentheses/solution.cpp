@@ -1,6 +1,57 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Okay so I came back to the problem much later. I finally wrapped my
+// mind around it. While the theory below is helpful, it was easier
+// to think of how to implement this from a decision tree perspective.
+// Suppose we have a string s, and we wish to generate the set of all
+// balanced parenthesis for n parentheses. Well, if we begin
+// from an arbitrary string s, we can suppose that there are two 
+// options, to either add an opening paren or add a closing paren.
+// However, we can only add a closing paren if we previousily added
+// at least one opening paren. Therefore we have established some
+// invariants on which we can recurse. In the base case, we add s
+// to the set of balanced parens if we have 0 opening and closing
+// parens to add remaining. By this logic, I wrote the following 
+// code which was submitted and accepted.
+
+class Solution2 {
+public:
+    void
+    generate_parens(string const s,
+                    int const open_cnt,
+                    int const close_cnt,
+                    vector<string> & parens)
+    {
+        if(open_cnt < 0 || close_cnt < 0)
+        {
+            return;
+        }
+        if(!open_cnt && !close_cnt)
+        {
+            parens.emplace_back(s);
+            return;
+        }
+        if(open_cnt > 0)
+        {
+            generate_parens(s + '(', open_cnt - 1, close_cnt, parens);
+        }
+        if(close_cnt > 0 && open_cnt < close_cnt)
+        {
+            generate_parens(s + ')', open_cnt, close_cnt - 1, parens);
+        }
+    }
+
+    vector<string>
+    generateParenthesis(int n)
+    {
+        vector<string> ret;
+        generate_parens("", n, n, ret);
+        return ret;
+    }
+};
+
+
 // This is a tough question for me to wrap my head around writing
 // in code. It's easy to work through the theory of the grammar.
 // G : S -> (S) || SS || E 
