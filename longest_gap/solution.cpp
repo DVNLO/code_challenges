@@ -22,6 +22,7 @@ max_gap(std::vector<bool> const & vals)
 // found in the provided vals. 
 {
     std::pair<size_t, size_t> ret{ 0U, 0U };
+    size_t gap_len_ret{ 0U };
     size_t const SIZE_VALS{ vals.size() };
     size_t j{ 0U };
     while(j < SIZE_VALS)
@@ -41,9 +42,11 @@ max_gap(std::vector<bool> const & vals)
             else
             {
                 std::pair<size_t, size_t> cur{ i, j };
-                if(gap_len(cur) > gap_len(ret))
+                size_t const gap_len_cur{ gap_len(cur) };
+                if(gap_len_cur > gap_len_ret)
                 {
                     ret = cur;
+                    gap_len_ret = gap_len_cur;
                 }
             }
         }
