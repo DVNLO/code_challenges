@@ -7,6 +7,10 @@ bool is_rbs(std::string const & bracket_sequence)
 {
     std::stack<char> s;
     size_t const SIZE_BRACKET_SEQUENCE{ bracket_sequence.size() };
+    if(SIZE_BRACKET_SEQUENCE % 2)
+    {
+        return false;
+    }
     size_t i{ 0U };
     bool ret{ true };
     while(i < SIZE_BRACKET_SEQUENCE)
@@ -46,7 +50,7 @@ bool is_rbs(std::string const & bracket_sequence)
         }
         ++i;
     }
-    return ret;
+    return ret && s.empty();
 }
 
 
