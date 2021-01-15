@@ -76,6 +76,52 @@ max_gap(std::vector<bool> const & vals,
     return max_gap_len > 0U;
 }
 
+bool
+max_gap_with_holes(std::vector<bool> const & vals,
+                   size_t & max_gap_with_holes_len,
+                   std::vector<std::pair<size_t, size_t>> & max_gap_with_holes_idx_ranges,
+                   size_t const max_hole_len,
+                   bool const hole_val)
+// returns the maximum gap found in vals where a gap is a continuous run of 
+// hole_val bounded by !hole_val and no continuous sequence of hole_vals 
+// exceeds max_hole_len. 
+// For example with hole_val = false and max_hole_len = 0
+// and vals = 1001 the max_gap_with_holes_len = 2
+{
+
+}
+
+std::pair<std::size_t, std::size_t>
+get_bounded_interval(std::vector<bool> const & vals, 
+                     std::size_t const begin_idx)
+// returns a bounding interval where the first and second indexes have
+// equivalent values in vals and all indexes between first and second
+// are not equal to the values at the first and second indexes. Note
+// that the vals[begin_idx] value is used to determine the bounding 
+// value and all elements in the middle will not equal lthe bounding
+// value.
+{
+    std::size_t const SIZE_VALS{ vals.size() };
+    if(begin_idx >= SIZE_VALS)
+    {
+        return { begin_idx, begin_idx };
+    }
+    std::size_t end_idx{ begin_idx + 1 };
+    while(end_idx < SIZE_VALS 
+          && vals[begin_idx] != vals[end_idx])
+    {
+        ++end_idx;
+    }
+    if(end_idx < SIZE_VALS)
+    {
+        return { begin_idx, end_idx };
+    }
+    else
+    {
+        return { begin_idx, begin_idx };
+    }
+}
+
 int main()
 {
     int n;
