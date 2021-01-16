@@ -52,21 +52,10 @@ max_gap(std::vector<bool> const & vals)
 std::size_t 
 len_gap(std::pair<std::size_t, std::size_t> const & gap)
 // returns the length of a gap pair where the first and second values of the
-// gap represent indexes. The gap length excludes the bounding indexes. So for
-// an example gap ...1... the gap length is 0, ...11.... the gap length is 0,
-// ...101... the gap length is 1. A gap may also be inverted, so an example gap
-// ...0... has gap length 0, ...00.... has gap length 0, and ...010... has gap
-// length 1. Gaps of length zero are considered degenerate.
+// gap represent indexes. len_gap({0, 0}) = 0, len_gap({0, 1}) = 1, ...
 {
-    if(gap.first == gap.second)
-    {
-        return 0U;
-    }
-    else
-    {
-        return std::max(gap.first, gap.second) 
-                - std::min(gap.first, gap.second) - 1;
-    }
+    return std::max(gap.first, gap.second) 
+           - std::min(gap.first, gap.second);
 }
 
 bool
@@ -133,8 +122,8 @@ get_max_gap_with_holes(std::vector<bool> const & vals,
                        bool const gap_val)
 // returns a vector of maximum gap with hole(s) where each hole does not 
 // exceed the max_gap_len, and a hole is a continuous run of gap_vals bounded
-// by not gap_val's. For example a vals == 1001010 with max_gap_len 2 and 
-// gap_val == 0 will return { { 0, 5} }; the trailing 0 is excluded.
+// by not gap_val's. For example a vals == 10011010 with max_gap_len 3 and 
+// gap_val == 0 will return { { 0, 6 } }; the trailing 0 is excluded.
 {
     std::size_t const SIZE_VALS{ vals.size() };
     std::vector<std::pair<std::size_t, std::size_t>> max_gaps_with_holes;
@@ -165,20 +154,23 @@ get_max_gap_with_holes(std::vector<bool> const & vals,
                 cur_gap.second = next_gap.second;
                 next_gap = get_bounded_interval(vals, cur_gap.second);
             }
-            if(max_gaps_with_holes.empty())
+            if(len_gap(cur_gap) > 0)
             {
-                max_gaps_with_holes.push_back(cur_gap);
-            }
-            else
-            {
-                if(len_gap(cur_gap) > len_gap(max_gaps_with_holes.front()))
+                if(max_gaps_with_holes.empty())
                 {
-                    max_gaps_with_holes.clear();
                     max_gaps_with_holes.push_back(cur_gap);
                 }
-                else if(len_gap(cur_gap) == len_gap(max_gaps_with_holes.front()))
+                else
                 {
-                    max_gaps_with_holes.push_back(cur_gap);
+                    if(len_gap(cur_gap) > len_gap(max_gaps_with_holes.front()))
+                    {
+                        max_gaps_with_holes.clear();
+                        max_gaps_with_holes.push_back(cur_gap);
+                    }
+                    else if(len_gap(cur_gap) == len_gap(max_gaps_with_holes.front()))
+                    {
+                        max_gaps_with_holes.push_back(cur_gap);
+                    }
                 }
             }
             if(next_gap.second == k)
@@ -187,10 +179,6 @@ get_max_gap_with_holes(std::vector<bool> const & vals,
             }
             else
             {
-                // since the cur_gap.second == next_gap.second
-                // or the len_gap(next_gap) > max_gap_len, and 
-                // therefore can never be included, we can
-                // advance to next_gap.second
                 k = next_gap.second;
             }
         }
@@ -209,7 +197,7 @@ max_gap_with_holes(std::vector<bool> const & vals,
 // through the max_gap_with_holes_len variable. A collection of max gaps with 
 // holes index ranges are output through the max_gap_with_holes_idx_ranges 
 // variable. Note that multiple max gaps with holes index ranges may be returned
-// if there exits multiple ranges of equivalent maximum value.
+// if there exits multiple ranges of equivalent maximum length.
 {
     max_gap_with_holes_idx_ranges = get_max_gap_with_holes(vals, max_gap_len, gap_val);
     if(max_gap_with_holes_idx_ranges.empty())
