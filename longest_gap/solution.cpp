@@ -10,7 +10,7 @@ get_bounded_interval(std::vector<bool> const & vals,
 // are not equal to the values at the first and second indexes. Note
 // that the vals[begin_idx] value is used to determine the bounding 
 // value and all elements in the middle will not equal the bounding
-// value.
+// value. Some examples of bounded intervals are 1, 11, 101, 1001...
 {
     std::size_t const SIZE_VALS{ vals.size() };
     if(begin_idx >= SIZE_VALS)
@@ -18,20 +18,15 @@ get_bounded_interval(std::vector<bool> const & vals,
         return { begin_idx, begin_idx };
     }
     std::size_t end_idx{ begin_idx + 1 };
-    while(end_idx < SIZE_VALS 
-          && vals[begin_idx] != vals[end_idx])
+    while(end_idx < SIZE_VALS)
     {
+        if(vals[begin_idx] == vals[end_idx])
+        {
+            return { begin_idx, end_idx };
+        }
         ++end_idx;
     }
-    if(end_idx < SIZE_VALS 
-       && vals[begin_idx] == vals[end_idx])
-    {
-        return { begin_idx, end_idx };
-    }
-    else
-    {
-        return { begin_idx, begin_idx };
-    }
+    return { begin_idx, begin_idx };
 }
 
 std::size_t 
