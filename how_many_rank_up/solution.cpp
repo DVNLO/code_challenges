@@ -5,9 +5,8 @@ std::size_t
 get_level_up_count(std::vector<int> scores, std::size_t const cutoff)
 // returns the number of scores greater than the provided cutoff rank. 
 {
-    sort(begin(scores), end(scores), std::greater<>());
-    // search from the cutoff position 
-    std::size_t ret{ cutoff };
+    sort(begin(scores), end(scores), std::greater<>()); // descending
+    std::size_t ret{ cutoff };  // search from the cutoff position 
     if(!scores[ret])    // 0 scores cannot level up
     {
         // advance left until discover of a non-zero score
