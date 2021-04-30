@@ -1,4 +1,52 @@
-class Solution {
+class Solution_1 {
+public:
+    char get_match(char const c)
+    {
+        switch(c)
+        {
+            case '(':
+                return ')';
+            case '{':
+                return '}';
+            case '[':
+                return ']';
+            default:
+                return '\0';
+        }
+    }
+    
+    bool 
+    isValid(string s) 
+    {
+        std::stack<std::string::value_type> symbols;
+        for(auto const c : s)
+        {
+            switch(c)
+            {
+                case '(':
+                case '{':
+                case '[':
+                    symbols.push(c);
+                    break;
+                case ')':
+                case '}':
+                case ']':
+                    if(symbols.empty() 
+                       || get_match(symbols.top()) != c)
+                    {
+                        return false;
+                    }
+                    symbols.pop();
+                    break;
+                default:
+                    return false;
+            }
+        }
+        return symbols.empty();
+    }
+};
+
+class Solution_0 {
 public:
     bool
     is_open_brace(char const c)
