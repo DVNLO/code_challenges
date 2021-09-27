@@ -114,7 +114,7 @@ int
 main(int const argc, char const * const * argv)
 {
     printf("sizeof(spherical_coord_f) == %lu\n", sizeof(struct coord_3f));
-    size_t const coord_count = 2U << 27U;
+    size_t const coord_count = 2U << 29U;
     printf("coord_count == %lu\n", coord_count);
     struct coord_3f * const coords = (struct coord_3f * const)(malloc(sizeof(struct coord_3f) * coord_count));
     if(!coords)
@@ -122,6 +122,7 @@ main(int const argc, char const * const * argv)
         return EXIT_FAILURE;
     }
     int sample_count = 32;
+    
     ///////////////////////////////////////////////////////////////////////////
     transform_coord_3f_seq(coords, coords, coord_count, spherical_to_cartesian_3f);
     struct timespec begin_seq;
@@ -135,9 +136,9 @@ main(int const argc, char const * const * argv)
     double const elapsed_seq = delta_t(&begin_seq, &end_seq);
     printf("mean seq delta_t == %f\n", elapsed_seq / sample_count);
     ///////////////////////////////////////////////////////////////////////////
-
+    
     ///////////////////////////////////////////////////////////////////////////
-    size_t const thread_count = 12U;
+    size_t const thread_count = 24U;
     transform_coord_3f_para(coords, coords, coord_count, spherical_to_cartesian_3f, thread_count);
     struct timespec begin_para;
     clock_gettime(CLOCK_MONOTONIC, &begin_para);
