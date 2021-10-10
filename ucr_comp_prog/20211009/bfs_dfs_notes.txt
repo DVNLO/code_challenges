@@ -1,0 +1,6 @@
+* simple vs non-simple : non-simple graph has multiple edges between nodes, and may also contain self loops.
+* more terminology on the slide you should probably review
+* weighted adjacency list is an interesting idea, I have not done that implementation. 
+* reimplement dfs recursive and imperative;
+* repeatedly said n and m for verticies and edges, just say v and e.
+* 
